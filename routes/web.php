@@ -1,0 +1,30 @@
+<?php
+
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MatkulController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\JurusanController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/1', function () {
+    return view('mahasiswa\create');
+});
+Route::resource('mahasiswa',MahasiswaController::class);
+
+
+Route::get('/2', function () {
+    return view('matkul\create');
+});
+Route::resource('matkul',MatkulController::class);
+
+
+Route::get('/3', function () {
+    return view('dosen\create');
+});
+Route::resource('dosen',DosenController::class);
+
+
+Route::get('/4', function () {
+    return view('jurusan\create');
+});
+Route::resource('jurusan',JurusanController::class);

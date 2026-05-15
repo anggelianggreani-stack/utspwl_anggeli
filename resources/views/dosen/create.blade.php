@@ -8,6 +8,7 @@
     @include ('components.boostrap')
 </head>
 <body>
+    
     <div class="mt-3 mx-3">
         <form action="{{ action([App\Http\Controllers\DosenController::class, 'store']) }}"  method="post">
             @csrf

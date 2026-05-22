@@ -4,6 +4,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\KelasController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,3 +32,8 @@ Route::get('/4', function () {
     return view('jurusan\create');
 });
 Route::resource('jurusan',JurusanController::class);
+
+Route::get('/5', function () {
+    return view('kelas\create');
+});
+Route::resource('kelas',KelasController::class);

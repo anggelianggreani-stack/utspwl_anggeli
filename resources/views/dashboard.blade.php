@@ -30,6 +30,8 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ action([App\Http\Controllers\JurusanController::class, 'index']) }}">Jurusan</a></li>
             <li><a class="dropdown-item" href="{{ action([App\Http\Controllers\MatkulController::class, 'index']) }}">Mata Kuliah</a></li>
+            <li><a class="dropdown-item" href="{{ action([App\Http\Controllers\KelasController::class, 'index']) }}">Kelas</a></li>
+          </ul>
           </ul>
         </li>
 

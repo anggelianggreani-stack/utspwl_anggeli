@@ -45,35 +45,37 @@
         <table style="width:90%; margin:auto;" class="table table-striped table-hover">
             <thead>
                 <th>No</th>
-                <th>Nama Lengkap</th>
-                <th>NIM</th>
-                <th>NIDN</th>
-                <th>Tanggal Lahir</th>
-                <th>Tempat Lahir</th>
-                <th>Alamat</th>
+                <th>Kode Kelas</th>
+                <th>Nama Dosen</th>
+                <th>Nama Mata Kuliah</th>
+                <th>Ruang Kelas</th>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Tahun Ajaran</th>
                 
                 <th class="text-center">Aksi</th>
             </thead>
-            @foreach ($mahasiswa as $nomor => $m)
+            @foreach ($kelas as $nomor => $k)
             <tr>
                 <td>{{$nomor + 1}}</td>
-                <td>{{$m->nama}}</td>
-                <td>{{$m->NIM}}</td>
-                <td>{{$m->NIDN}}</td>
-                <td>{{$m->tanggal_lahir}}</td>
-                <td>{{$m->tempat_lahir}}</td>
-                <td>{{$m->alamat}}</td>
+                <td>{{$k->kode_kelas}}</td>
+                <td>{{$k->nama_dosen}}</td>
+                <td>{{$k->nama_mata_kuliah}}</td>
+                <td>{{$k->ruang_kelas}}</td>
+                <td>{{$k->hari}}</td>
+                <td>{{$k->jam}}</td>
+                <td>{{$k->tahun_ajaran}}</td>
 
                 
                 <td>
                     <div class="d-flex justify-content-center gap-2">
-                    <form action="{{ action([App\Http\Controllers\MahasiswaController::class, 'destroy'], [$m->id]) }}" method="post">
+                    <form action="{{ action([App\Http\Controllers\KelasController::class, 'destroy'], [$k->id]) }}" method="post">
                     @csrf
                     @method('DELETE') 
                         <button class="btn btn-danger">Hapus</button>
                     </form>
 
-                    <a href="{{ action([App\Http\Controllers\MahasiswaController::class, 'edit'], [$m->id]) }}" method="post">
+                    <a href="{{ action([App\Http\Controllers\KelasController::class, 'edit'], [$k->id]) }}" method="post">
                         <button class="btn btn-warning">Edit</button>
                     </a>
                     </div>

@@ -6,7 +6,7 @@ use App\Models\kelas;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class kelasController extends Controller
+class KelasController extends Controller
 {
         /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class kelasController extends Controller
 
         kelas::create($data);
 
-        return redirect()->action([kelasController::class, 'index']);
+        return redirect()->action([KelasController::class, 'index']);
     }
 
     /**
@@ -65,7 +65,7 @@ class kelasController extends Controller
 
         kelas::find($id)->update($data);
 
-        return redirect()->action([kelasController::class, 'index']);
+        return redirect()->action([KelasController::class, 'index']);
     }
 
     /**
@@ -74,6 +74,6 @@ class kelasController extends Controller
     public function destroy($id)
     {
         kelas::findOrFail($id)->delete();
-        return redirect()->action([kelasController::class, 'index']);
+        return redirect()->action([KelasController::class, 'index']);
     }
 }

@@ -13,42 +13,42 @@
         <form action="{{ action([App\Http\Controllers\DosenController::class, 'store']) }}"  method="post">
             @csrf
 
-             <div class="mb-3">
+             <div class="mb-3 w-25">
                     <label>Id Jurusan</label>
                     <input type="text" name="jurusan_id" class="form-control" placeholder="Masukkan Id Jurusan Anda">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>Nama Lengkap Dosen</label>
                     <input type="text" name="fullname" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>NIP</label>
                     <input type="text" name="NIP" class="form-control" placeholder="Masukkan NIP Anda">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>NIDN</label>
                     <input type="text" name="NIDN" class="form-control" placeholder="Masukkan NIDN Anda">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>Pendidikan Terakhir</label>
                     <input type="text" name="pendidikan_terakhir" class="form-control" placeholder="Masukkan Pendidikan Terakhir Anda">
                 </div>
                 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>Tempat Lahir</label>
                     <input type="text" name="tempat_lahir" class="form-control" placeholder="Masukkan Tempat Lahir Anda">
                 </div>
                 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>Tanggal Lahir</label>
                     <input type="text" name="tanggal_lahir" class="form-control" placeholder="Masukkan Tanggal Lahir Anda">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 w-25">
                     <label>Alamat</label>
                     <textarea name="alamat" rows="3" class="form-control" placeholder="Masukkan Alamat Anda"></textarea>
                 </div>

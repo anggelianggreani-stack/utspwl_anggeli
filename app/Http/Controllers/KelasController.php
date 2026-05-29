@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\kelas;
+use App\Models\matkul;
+use App\Models\dosen;
+use App\Models\jurusan;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -23,7 +26,12 @@ class KelasController extends Controller
      */
     public function create()
     {
-        return view('kelas.create');
+        return view('kelas.create', [
+            'dosen' => dosen::get(),
+            'matkul'=> matkul::get(),
+            'hari' => kelas::ListHari(),
+            'jam' => kelas::ListJam(),
+        ]);
     }
 
     /**

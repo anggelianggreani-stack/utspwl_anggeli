@@ -40,31 +40,35 @@
 </nav>
 
         <div style="text-align: center;">
-            <a href="/1"><button type="button" class="btn btn-primary mx-auto" style ="width:90%; margin:10px;">Kembali</button></a>
+            <a href="/5"><button type="button" class="btn btn-primary mx-auto" style ="width:90%; margin:10px;">Kembali</button></a>
         </div>
         <table style="width:90%; margin:auto;" class="table table-striped table-hover">
             <thead>
                 <th>No</th>
-                <th>Kode Kelas</th>
+                <th>Kelas</th>
+                <th>Mata Kuliah</th>
                 <th>Nama Dosen</th>
-                <th>Nama Mata Kuliah</th>
-                <th>Ruang Kelas</th>
                 <th>Hari</th>
                 <th>Jam</th>
                 <th>Tahun Ajaran</th>
-                
+                <th>Semester</th>
+                <th>Ruang Kelas</th>
+                <th>Ruang Kelas</th>
+                <th>Jumlah Mahasiswa</th>
                 <th class="text-center">Aksi</th>
             </thead>
             @foreach ($kelas as $nomor => $k)
             <tr>
                 <td>{{$nomor + 1}}</td>
                 <td>{{$k->kode_kelas}}</td>
-                <td>{{$k->nama_dosen}}</td>
-                <td>{{$k->nama_mata_kuliah}}</td>
-                <td>{{$k->ruang_kelas}}</td>
+                <td>{{$k->kode_matkul}}</td>
+                <td>{{$k->fullname}}</td>
                 <td>{{$k->hari}}</td>
                 <td>{{$k->jam}}</td>
                 <td>{{$k->tahun_ajaran}}</td>
+                <td>{{$k->semester}}</td>
+                <td>{{$k->ruang_kelas}}</td>
+                <td>{{$k->jumlah_max}}</td>
 
                 
                 <td>

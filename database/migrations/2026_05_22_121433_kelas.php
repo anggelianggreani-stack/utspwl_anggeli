@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('jumlah_max');
             $table->integer('jumlah_mahasiswa')->default(0);
             $table->enum('semester', ['ganjil', 'genap']);
-            $table->timestamp('created_at')->useCurrent();;
+            $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()
                                         ->useCurrentOnUpdate();
             $table->unique(['kode_dosen', 'hari', 'jam', 'tahun_ajaran', 'semester']);

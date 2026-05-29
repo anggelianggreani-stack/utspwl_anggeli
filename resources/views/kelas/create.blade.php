@@ -11,58 +11,81 @@
     <div class="mt-3 mx-3">
         <form action="{{ action([App\Http\Controllers\KelasController::class, 'store']) }}"  method="post">
             @csrf
+    
+            <div class="mb-3 w-25">
+                <label for="exampleFormControlInput1" class="form-label">Kode Kelas</label>
+                <input type="Text" name="kode_kelas" class="form-control" placeholder="Masukkan Kode Kelas">
+            </div>
 
             <div class="mb-3 w-25">
-                <label for="exampleFormControlInput1" class="form-label">Kode Mata Kuliah</label>
-                <input type="Text" name="kode_mata_kuliah" class="form-control" placeholder="Masukkan Kode Mata Kuliah">
+                <label for="select" class="form-label">Matkul</label>
+                <select id="select" class="form-select">
+                <option>-- Pilih Matkul --</option>
+                @foreach($matkul as $mk)
+                    <option value="{{ $mk->kode_mk }}">{{ $mk->nama_mk }}</option>
+                @endforeach
+                </select>
             </div>
-    
+
             <div class="mb-3 w-25">
                 <label for="exampleFormControlInput1" class="form-label">Kode Dosen</label>
                 <input type="Text" name="kode_dosen" class="form-control" placeholder="Masukkan Kode Dosen">
             </div>
 
             <div class="mb-3 w-25">
+                <label for="select" class="form-label">Dosen Pengajar</label>
+                <select id="select" class="form-select">
+                <option>-- Pilih Dosen --</option>
+                @foreach($dosen as $d)
+                    <option value="{{ $d->fullname }}">{{ $d->fullname }}</option>
+                @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3 w-25">
                 <label for="select" class="form-label">Hari</label>
                 <select id="select" class="form-select">
-                <option>Senin</option>
-                <option>Selasa</option>
-                <option>Rabu</option>
-                <option>Kamis</option>
-                <option>Jumat</option>
+                <option>-- Pilih Hari --</option>
+                @foreach($hari as $h)
+                    <option value="{{ $h }}">{{ $h }}</option>
+                @endforeach
+                </select>
+            </div>
 
-      </select>
-    </div>
+            <div class="mb-3 w-25">
+                <label for="select" class="form-label">Jam</label>
+                <select id="select" class="form-select">
+                <option>-- Pilih Jam --</option>
+                @foreach($jam as $j)
+                    <option value="{{ $j }}">{{ $j }}</option>
+                @endforeach
+                </select>
+            </div>
 
-                <div class="mb-3 w-25">
-      <label for="select" class="form-label">Jam</label>
-      <select id="select" class="form-select">
-        <option>07.00 - 08.00</option>
-        <option>08.50 - 11.30</option>
-        <option>12.30 - 14.10</option>
-        <option>17.00 - 18.40</option>
-        <option>19.00 - 20.40</option>
+            <div class="mb-3 w-25">
+                <label for="exampleFormControlInput1" class="form-label">Tahun Ajaran</label>
+                <input type="Text" name="tahun_ajaran" class="form-control" placeholder="Masukkan Tahun Ajaran">
+            </div>
 
-      </select>
-    </div>
+            <div class="mb-3 w-25">
+                <label for="select" class="form-label">Semester</label>
+                <select id="select" class="form-select" name="semester">
+                <option>-- Pilih Semester --</option>
+                <option value="Ganjil">Ganjil</option>
+                <option value="Genap">Genap</option>
+                </select>
+            </div>
 
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-  <label class="form-check-label" for="radioDefault1">
-    Ganjil
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
-  <label class="form-check-label" for="radioDefault2">
-    Genap
-  </label>
-</div>
+            <div class="mb-3 w-25">
+                <label for="exampleFormControlInput1" class="form-label">Ruangan</label>
+                <input type="Text" name="ruang_kelas" class="form-control" placeholder="Masukkan Ruangan Kelas">
+            </div>
             
             <div class="mb-3 w-25">
+                <label for="exampleFormControlInput1" class="form-label">Jumlah Mahasiswa</label>
+                <input type="Text" name="jumlah_max" class="form-control" placeholder="Masukkan Jumlah Mahasiswa">
+            </div>
 
-
-            
             <button class="btn btn-primary" type="submit" value="add">Submit</button>
             <button class="btn btn-danger" type="reset" value="clear">Clear</button>
     
